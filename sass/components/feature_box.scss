@@ -1,0 +1,25 @@
+.feature__box{
+    text-align: center;
+    background-color: white;
+    padding-top: 1rem;
+    padding:2rem;
+    transition: transform .3s;
+    box-shadow: 0 1.5rem 4rem rgba(black, .15);
+    &__icon{
+      font-size: 6rem;
+      background-image:linear-gradient( to right, $Light-green, $Medium-green);
+      background-clip: unset;
+     -webkit-background-clip: text;
+      color:transparent;
+    }
+    &:hover{
+        transform: translateY(-1.5rem) scale(1.03);
+        backface-visibility: hidden;
+    }
+    @include respond(phone)
+    {
+      width: 60%;
+      margin: auto;
+    }
+    
+}

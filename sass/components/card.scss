@@ -1,0 +1,199 @@
+
+.card{
+   height:44rem;
+   width:85%;
+   perspective: 150rem;
+   position: relative;
+   &__button{
+       height:2rem;
+       width:80%;
+       margin:auto;
+    }
+    &__side{
+      height:44rem;
+      width:100%;
+      transition: all .8s ease;
+      backface-visibility: hidden;
+      border-radius: .3rem;
+      position:absolute;
+      top:0;
+      left:0;
+        &--front{
+            height:auto;
+            background-color: white;
+            box-shadow: 0 1.5rem 4rem rgba($color-black, .15);
+        }
+    
+        &--back{
+        
+            &--1{
+                background-image: linear-gradient(to right bottom,$color-secondary-lite,$color-secondary-dark);
+                box-shadow: 0 1.5rem 4rem rgba($color-black, .15);
+                }
+            &--2{
+                background-image: linear-gradient(to right bottom,$Light-green,$Dark-green);
+                box-shadow: 0 1.5rem 4rem rgba($color-black, .15);
+            }
+            &--3{
+                background-image: linear-gradient(to right bottom,$color-teritiary-lite,$color-teritiary-dark);
+                box-shadow: 0 1.5rem 4rem rgba($color-black, .15);
+            }
+            transform: rotateY(180deg);
+        }
+
+    }
+    &:hover &__side--front{
+        transform: rotateY(-180deg);
+    }
+    &:hover &__side--back{
+    transform: rotateY(0deg);
+    }
+    &__image{
+        height:17rem;
+        background-size: cover;
+        background-blend-mode: screen; 
+        clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+        &--1{
+            background-image: linear-gradient(to right bottom,
+            $color-secondary-lite, $color-secondary-dark),
+            url(images/nat-5.jpg);
+            }
+        &--2{
+            background-image: linear-gradient(to right bottom,
+            $Light-green, $Dark-green),
+            url(images/nat-6.jpg);
+        }
+        &--3{
+            background-image: linear-gradient(to right bottom,
+            $color-teritiary-lite, $color-teritiary-dark),
+            url(images/nat-7.jpg);
+        }
+    }
+    &__heading{
+        position: absolute;
+        top:22%;
+        right:3rem;
+        font-weight: 300;
+        font-size: 2rem;
+        text-align: right;
+        width: 50%;
+    
+        color:$color-white;
+        text-transform: uppercase;
+    }
+    &__heading--span{
+        padding:1rem 2rem;
+        -webkit-box-decoration-break: clone;
+        box-decoration-break: clone;
+        &--1{
+            background-image: linear-gradient(to right bottom,rgba( $color-secondary-lite,.85),
+        rgba( $color-secondary-dark,.85));
+        }
+        &--2{
+            background-image: linear-gradient(to right bottom,rgba( $Light-green,.85),
+        rgba( $Dark-green,.85));
+        }
+        &--3{
+            background-image: linear-gradient(to right bottom,rgba( $color-teritiary-lite,.85),
+        rgba( $color-teritiary-dark,.85));
+        }
+    }
+    &__details{
+        margin-top: 5rem;
+        ul{
+            list-style: none;
+            width:80%;
+            margin:0 auto;
+        li{
+            padding: 1rem;
+            text-align:center;
+            &:not(:last-child)
+            {
+                border-bottom:1px solid $color-grey-lite-2;
+            }
+        }
+        }
+    }
+    &__bdetails{
+        height:60%;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%,-50%);
+        text-align: center;
+        color: white;
+        .ccost{
+            font-size: 6rem;
+            font-weight: 100;
+            margin-bottom: 8rem;
+        }
+        .ctext{
+            text-transform: uppercase;
+            font-size: 1.4rem;
+            margin-bottom: 3rem;
+        }
+    }
+    
+    
+    
+   @media only screen and (max-width:56.25em),
+          only screen and (hover:none)
+    {
+            height:auto;
+            width:85%;
+            position: relative;
+            border-radius: .3rem;
+        &:hover &__side--front{
+                transform: rotateY(0deg);
+        }
+        &__button{
+            height:2rem;
+            width:80%;
+            margin:auto;
+         }
+        &__side{
+           height:auto;
+           width:100%;
+           transition: all .8s ease;
+           position:relative;
+           &--front{
+               position: relative;
+               height: auto;
+           }
+            &--back{
+                height: 22rem;
+                display: block;
+                position: relative;
+                margin-top: -1.5rem;
+                box-shadow: 0 1.5rem 4rem rgba($color-black, .15);
+                clip-path: polygon(0 5%,100% 0,100% 100%,0 100%);
+                 &--1{
+                     background-image: linear-gradient(to right bottom,$color-secondary-lite,$color-secondary-dark);
+                     }
+                 &--2{
+                     background-image: linear-gradient(to right bottom,$Light-green,$Dark-green);
+                 }
+                 &--3{
+                     background-image: linear-gradient(to right bottom,$color-teritiary-lite,$color-teritiary-dark);
+                 }
+                 transform: rotateY(0deg);
+            }
+        }
+         
+        &__bdetails{
+             position: relative;
+             text-align: center;
+             color: white;
+             .ccost{
+                 font-size: 5rem;
+                 font-weight: 100;
+                 margin-bottom: 1rem;
+             }
+             .ctext{
+                 text-transform: uppercase;
+                 font-size: 1.4rem;
+                 margin-bottom: 1rem;
+             }
+         }
+    }
+}

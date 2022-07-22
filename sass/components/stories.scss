@@ -1,0 +1,99 @@
+.story{
+    width: 75%;
+    padding: 6rem;
+    padding-left: 9rem;
+    margin: 0 auto;
+    margin-bottom: 2rem;
+    background-color: rgba($color-white,.6);
+    box-shadow: 0 2.5rem 2.6rem rgba($color-black,.2);
+    border-radius: 3px;   
+    font-size: $default-font-size;
+    font-style: lato;
+    transform: skewX(-12deg);
+    z-index: 1;
+    @include respond(tab-port)
+    {
+      width:100%;
+      transform: skewX(-8deg);
+      padding: 6rem;
+    }
+    @include respond(phone)
+    {
+      width:100%;
+      transform: skewX(-3deg);
+      margin-bottom: 1rem;
+      padding: 4rem;
+    }
+   
+    & > *{
+      transform: skewX(12deg);
+      @include respond(tab-port)
+    {
+      width:100%;
+      transform: skewX(-8deg);
+    }
+
+    @include respond(phone)
+    {
+      width:100%;
+      transform: skewX(-3deg);
+      margin-bottom: 1rem;
+    }
+     
+         }
+    &__shape{
+        height: 15rem;
+        width: 15rem;
+        float:left;
+        position: relative;
+        -webkit-shape-outside: circle(50% at 50% 50%);
+        shape-outside: circle(50% at 50% 50%);
+        -webkit-clip-path: circle(50% at 50% 50%);
+        clip-path: circle(50% at 50% 50%);
+        transform: translateX(-3rem) skewX(12deg) ;
+        overflow: hidden;
+        @include respond(tab-port)
+        {
+          transform: translateX(-3rem) skewX(-8deg) ;
+        }
+        @include respond(tab-port)
+        {
+          transform: translateX(-3rem) skewX(-3deg) ;
+        }
+    }
+    &__image{
+        height: 100%;
+        width:100%;
+      transition: all .5s;
+      transform: scale(1.2);
+    }
+    &__text{
+       font-size: 1.6rem;
+    }
+    &__caption{
+        text-transform: uppercase;
+        text-align: center;
+        color: $color-white;
+        position: absolute;
+        top:50%;
+        left: 50%;
+      transform: translate(-50%, 50%);
+      opacity: 0;
+     transition: all .5s;
+
+    }
+    &__btn{
+      margin: auto;
+      position: absolute;
+      left:50%;
+      transform: translateX(-100%);
+    }
+    &:hover &__caption{
+        transform: translate(-50%,-50%);
+        opacity: 1;
+    }
+    &:hover &__image{
+      transform: scale(1);
+        filter: blur(1rem) brightness(80%);
+    }
+}

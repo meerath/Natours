@@ -1,0 +1,28 @@
+{
+  "name": "natours",
+  "version": "1.0.0",
+  "description": "high",
+  "main": "index.js",
+  "scripts": {
+    "watch:sass": "node-sass sass/main.scss style.css -w",
+    "compile:sass": "node-sass sass/main.scss style.comp.css",
+    "concat:css": "concat -o style.concat.css icon_font.css style.comp.css",
+    "prefix:css": "postcss --use autoprefixer -b 'last 10 versions' style.concat.css -o style.prefix.css",
+    "compress:css": "node-sass style.prefix.css style.css --output-style compressed"
+  },
+  "keywords": [
+    "webs"
+  ],
+  "author": "vasanth",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^10.1.0",
+    "concat": "^1.0.3",
+    "node-sass": "^4.14.1",
+    "npm-run-all": "^4.1.5",
+    "postcss-cli": "^8.3.1"
+  },
+  "dependencies": {
+    "postcss": "^8.1.0"
+  }
+}
